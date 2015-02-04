@@ -9,7 +9,8 @@
 </head>
 <body>
 	<!--HEADER-->
-	<header class="layout-center-wrapper">
+	<div class="layout-center-wrapper">
+	<header>
 		<nav class="top-menu">
 			<ul class="top-menu-list">
 				<li><a href="index.html">Информация</a></li>
@@ -23,7 +24,7 @@
 		</nav>
 	</header>
 	<!--Main content-->
-	<main class="layout-center-wrapper">
+	<main>
 		<!--Intro-->
 		<section class="intro">
 			<img src="img/intro-background-photo.png" class="intro-bgr">
@@ -35,7 +36,7 @@
 		<!--Promo-->
 		<section class="promo">
 			<header class="entry">
-				<span class="title">Седона — небольшой городок в аризоне, заслуживающий большего!</span><br>
+				<span class="title">Седона — небольшой городок в аризоне,<br> заслуживающий большего!</span><br>
 				<span class="title-prim">Рассмотрим 5 причин, по которым седона круче чем Гранд Каньон!</span>
 			</header>
 			<section class="reason-bars">
@@ -48,17 +49,17 @@
 					<img src="img/promo-pic-bar1.png" alt="" class="promo-pic-bar1">
 				</div>
 				<div class="sub-bar">
-					<img src="" alt="housing">
+					<img src="img/promo-sub-bar-housing.png" alt="housing">
 					<span class="title">Жилье</span>
 					<span class="title-prim">Рекомендуем пожить в настоящем мотеле, все как в кино!</span>
 				</div>
-				<div class="sub-bar">
-					<img src="" alt="food">
+				<div class="sub-bar custom-width">
+					<img src="img/promo-sub-bar-food.png" alt="food">
 					<span class="title">Еда</span>
 					<span class="title-prim">Всегда заказывайте фирменный бургер, вы не разочаруетесь</span>
 				</div>
 				<div class="sub-bar">
-					<img src="" alt="souvenirs">
+					<img src="img/promo-sub-bar-souvenirs.png" alt="souvenirs">
 					<span class="title">Сувениры</span>
 					<span class="title-prim">Не только китайского, но и местного производства</span>
 				</div>
@@ -71,17 +72,17 @@
 					<span class="title-prim">Да, по нему можно пройтись! Если конечно вы осмелитесь</span>
 				</div>
 				<div class="bar b3">
-					<span class="title">Небольшая площадь</span>
+					<span class="title">Небольшая<br> площадь</span>
 					<span class="title-prim">— №3 —</span>
-					<span class="title-prim">Все достопримечательности находятся очень близко</span>
+					<span class="title-prim">Все достопримеча- тельности находятся очень близко</span>
 				</div>
-				<div class="bar b3">
-					<span class="title">Красивая дорога</span>
+				<div class="bar b3  custom-width">
+					<span class="title">Красивая<br> дорога</span>
 					<span class="title-prim">— №4 —</span>
 					<span class="title-prim">Ехать в Седону из Лас-Вегаса совсем не скучно!</span>
 				</div>
 				<div class="bar b3">
-					<span class="title">Мало туристов</span>
+					<span class="title">Мало<br> туристов</span>
 					<span class="title-prim">— №5 —</span>
 					<span class="title-prim">Большинство едет в Гранд Каньон и толпится там</span>
 				</div>
@@ -90,14 +91,18 @@
 		<!--Search form title-->
 		<section class="search-title">
 			<h1>Заинтересовались?</h1>
-			<span class="title-prim">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</span>
-			<div class="search-button"><a href="">Поиск гостиницы в Седоне</a></div>
+			<span class="title-prim">Укажите предполагаемые даты поездки<br> и мы покажем вам лучшие предложения гостиниц в Седоне</span>
+			<div class="search-button">
+				<button class="title">Поиск гостиницы в Седоне</button>
+			</div>
 		</section>
 		<!--Search form-->
 		<section class="search-popup">
 			<form action="">
-				<label for="">Дата заезда<input type="text" value="24 апреля 2015"></label>
-				<label for="">Дата выезда<input type="text" value="4 июля 2015"></label>
+				<label for="">Дата заезда</label>
+				<input type="text" value="24 апреля 2015">
+				<label for="">Дата выезда</label>
+				<input type="text" value="4 июля 2015">
 				<span>Взрослые</span>
 				<div class="count-toggler">
 					<div class="less"></div>
@@ -110,7 +115,7 @@
 					<input type="text" value="0">
 					<div class="more"></div>
 				</div>
-				<input type="submit" value="Найти">
+				<input type="submit" value="Найти" class="title">
 			</form>
 		</section>
 		<!--Map-->
@@ -133,6 +138,7 @@
 			<div></div>
 		</div>
 	</footer>
+	</div>
 </body>
 </html>
 <div class="layout-center-wrapper"></div>
