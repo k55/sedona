@@ -38,6 +38,15 @@ main .filter:after{
 .col ul li>span{
 	padding-right: 20px;
 	font-size:22px;
+	color: #b5b5b5;
+}
+.col ul li:hover>span{
+	color: #fff;
+}
+.col ul li>span.disabled{
+	color: #6a6a6a;
+}
+.col ul li>span:onmousedown{
 }
 .col .filter-title{
 	font-size: 16px;
@@ -139,22 +148,35 @@ main .filter:after{
 	font-size: 12px;
 	line-height: 18px;
 }
-.sort-bar span{
-	
-}
 .sort-bar li{
 	margin-left:30px;
 	color: #cacaca;
 	border-bottom: 1px dotted #81b3d2;
+	cursor: default;
 }
-.sort-bar li.sort-by-this{
+.sort-bar li.active{
 	color: #81b3d2;
+	border-bottom: none;
+}
+.sort-bar li:hover{
+	color: #81b3d2;
+	border-bottom: 1px dotted #81b3d2;
+}
+.sort-bar li:active{
+	color: #000;
 	border-bottom: none;
 }
 .sort-bar .sort-arrow{
 	float: right;
-	color: #cacaca;
+	color: #cccccc;
 	font-size: 21px;
+	cursor: default;
+}
+.sort-bar .sort-arrow:hover{
+	color: #000;
+}
+.sort-bar .sort-arrow:active{
+	color: #81b3d2;
 }
 .sort-bar .sort-arrow.active{
 	color: #81b3d2;
@@ -176,8 +198,15 @@ main .filter:after{
 	width: 260px;
 	margin-left: 30px;
 }
-.results .item-left-floater h1{
+.results .item-left-floater h1.title{
 	margin: 0px;
+	cursor: default;
+}
+.results .item-left-floater h1.title:hover{
+	color: #81b3d2;
+}
+.results .item-left-floater h1.title:active{
+	color: #cacaca;
 }
 .results .item-left-floater-inn{
 	float: left;
@@ -203,8 +232,22 @@ main .filter:after{
 .results a.details{
 	background: #81b3d2;
 }
+.results a.details:hover{
+	background: #669ec0;
+}
+.results a.details:active{
+	color: #94b9d2;
+	background: #5496bd;
+}
 .results a.book{
 	background: #766357;
+}
+.results a.book:hover{
+	background: #604e43;
+}
+.results a.book:active{
+	color: #928a85;
+	background: #503e33;
 }
 .results .rate{
 	float: right;

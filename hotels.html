@@ -17,7 +17,7 @@
 				<li><a href="index.html">Информация</a></li>
 				<li><a href="#">Фото и видео</a></li>
 				<li><a href="#map">Карта штата</a></li>
-				<li><a href="hotels.html">Гостиницы</a></li>
+				<li><a href="hotels.html" class="active">Гостиницы</a></li>
 			</ul>
 			<div class="logo-container">
 				<a href="index.html"class="logo-emblem"></a>
@@ -30,7 +30,7 @@
 			<div class="col">
 				<div class="filter-title">Инфраструктура:</div>
 				<ul>
-					<li><span class="icon-check-on"></span>Бассейн</li>
+					<li><span class="icon-check-on disabled"></span>Бассейн</li>
 					<li><span class="icon-check-off"></span>Парковка</li>
 					<li><span class="icon-check-off"></span>Wi-Fi</li>
 				</ul>
@@ -45,26 +45,28 @@
 			</div>
 			<div class="col">
 				<div class="filter-title">Стоимость в сутки (р):</div>
-				<div class="price-inputs">
-					<div>
-						от 
-						<input type="text" value="600">
+				<form action="">	
+					<div class="price-inputs">
+						<div>
+							от 
+							<input type="text" value="600">
+						</div>
+						<span class="price-inputs-divider"></span>
+						<div>
+							до 
+							<input type="text" value="3000">
+						</div>
 					</div>
-					<span class="price-inputs-divider"></span>
-					<div>
-						до 
-						<input type="text" value="3000">
+					<div class="range-controls">
+						<div class="scale">
+							<div class="scale-bar"></div>
+						
+						<div class="toggle toggle-min"></div>
+						<div class="toggle toggle-max"></div>
+						</div>
 					</div>
-				</div>
-				<div class="range-controls">
-					<div class="scale">
-						<div class="scale-bar"></div>
-					
-					<div class="toggle toggle-min"></div>
-					<div class="toggle toggle-max"></div>
-					</div>
-				</div>
-				<input type="submit" class="filter-btn" value="Показать">
+					<input type="submit" class="filter-btn" value="Показать">
+				</form>
 			</div>
 		</section>
 		<!--Sort bar-->
@@ -72,7 +74,7 @@
 			<h1>Найдено: <span>3</span></h1>
 			<span>сортировка:</span>
 			<ul>
-				<li class="sort-by-this">По цене</li>
+				<li class="active">По цене</li>
 				<li>По типу</li>
 				<li>По рейтингу</li>
 			</ul>
