@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Sedona</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/symbols-sedona.css">
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<script></script>
 </head>
@@ -97,21 +98,26 @@
 		<!--Search form-->
 		<section class="search-popup">
 			<form action="">
-				<label for="">Дата заезда:</label>
-				<input type="text" value="24 апреля 2015">
-				<label for="">Дата выезда:</label>
-				<input type="text" value="4 июля 2015">
+				<div class="cover-for-calendar">
+					<label for="din">Дата заезда:</label>
+					<input type="text" id="din" value="24 апреля 2015">
+					<i class="icon-calendar"></i>
+				</div>
+				<div class="cover-for-calendar">
+					<label for="dout">Дата выезда:</label>
+					<input type="text" id="dout" value="4 июля 2015"><i class="icon-calendar"></i>
+				</div>
 				<span>Взрослые:</span>
 				<div class="count-toggler count-adult">
-					<div class="less"></div>
+					<div class="less icon-minus"></div>
 					<input type="text" value="2">
-					<div class="more"></div>
+					<div class="more icon-plus"></div>
 				</div>
 				<span>Дети:</span>
 				<div class="count-toggler count-child">
-					<div class="less"></div>
+					<div class="less icon-minus"></div>
 					<input type="text" value="0">
-					<div class="more"></div>
+					<div class="more icon-plus"></div>
 				</div>
 				<input type="submit" value="Найти" class="title">
 			</form>
@@ -127,9 +133,9 @@
 				<a href="hotels.html" class="title">#visitsedona</a>
 			</div>
 			<div class="social-btns">
-				<a href=""></a>
-				<a href=""></a>
-				<a href=""></a>
+			<a href="#" class="icon-twitter">0x74</a>
+			<a href="#" class="icon-facebook">0x66</a>
+			<a href="#" class="icon-youtube">0x39</a>
 			</div>
 			<div class="copyright">
 				<span>website by</span>
