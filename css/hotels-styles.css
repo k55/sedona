@@ -210,7 +210,14 @@ main .filter:after{
 	float: right;
 }
 .results .rate .rate-num{
-	margin-top: 48px;
+	float: right;
+	padding: 0px 16px;
+	background: #f2f2f2;
+}
+.results .stars{
+	width: 100%;
+	margin-bottom: 46px;
+	text-align: right;
 }
 .results .stars .icon-star{
 	color:#81b3d2;
