@@ -11,12 +11,17 @@ header, main, footer{
 	background: #fff;
 }
 .layout-center-wrapper{
+	position: relative;
 	margin:0px auto;
 	min-width: 768px;
 	max-width: 1200px;
 	box-shadow: 0px 0px 25px #cfcfcf;
 }
-	/*HEADER*/
+/*  ===========================
+			INDEX page
+	===========================*/
+
+	/* HEADER */
 }
 .top-menu{
 	position: relative;
@@ -56,10 +61,10 @@ header, main, footer{
 	margin-left: -70px;
 	width: 140px;
 	height: 70px;
-	background: url(img/logo.png) no-repeat;
+	background: url(../img/logo.png) no-repeat;
 }
-	/*Main content*/
-	/*Intro*/
+	/* Main content */
+	/* Intro */
 
 .intro{
 	position: relative;
@@ -86,7 +91,7 @@ header, main, footer{
 	height: 36px;
 	margin-bottom: 0px;
 }
-	/*Promo*/
+	/* Promo */
 .promo .entry{
 	padding: 60px 140px;
 	text-align: center;
@@ -155,7 +160,7 @@ header, main, footer{
 .sub-bar .title, .sub-bar img, .reason-bars .title-prim{
  	padding-bottom: 25px;
  }
- 	/*Search form title*/
+ 	/* Search form title */
 .search-title{
 	padding-top: 50px;
 	text-align: center;
@@ -179,18 +184,18 @@ header, main, footer{
 .search-title .search-button button{
 	width: 100%;
 	padding: 35px 0px;
-	font-weight: bold;
+	font-family: 'PT Sans', sans-serif;
 	color: #ffffff;
 	background: #766357;
 	border: none;
 	cursor: pointer;
 }
-	/*Search form*/
+	/* Search form */
 .search-popup{
 	position: absolute;
 	top:100%;
 	z-index:10;
-	display: block;/*!!!!!*/
+	display: block;/* !!!!!Programable style */
 	width: 568px;
 	margin: 0px auto;
 	padding: 55px;
@@ -235,6 +240,7 @@ header, main, footer{
 }
  .search-popup .count-toggler input{
  	width: 15px;
+ 	text-align: center;
  	background: #f2f2f2;
  	border: none;
  }
@@ -257,18 +263,23 @@ header, main, footer{
 	background: #81b3d2;
 	border: none;
 }
-	/*Map*/
+	/* Map */
 #map{
 	position: relative;
 	height: 592px;
-	background: url(img/map.png) no-repeat 50% 50%;
+	background: url(../img/map.png) no-repeat 50% 50%;
 }
-	/*Footer*/
+	/* Footer */
 footer{
 	position: absolute;
 	width: 100%;
 	bottom: 0px;
 	opacity: .85;
+}
+.hotels footer{
+	position: static;
+	opacity: 1;
+	background: #fefefe;
 }
 footer .title{
 	color: #000000;
@@ -281,9 +292,15 @@ footer>div{
 	text-align: center;
 }
 footer .social-btns a{
+	display: inline-block;
 	width: 46px;
 	height: 46px;
+	margin-right: 2px;
+	font-size: 21px;
+	line-height: 46px;
+	vertical-align: middle;
 	color:#fff;
+	text-decoration: none;
 	background: #81b3d2;
 	border: 1px solid #8bb9d6;
 
@@ -297,8 +314,8 @@ footer .copyright div{
 	width: 27px;
 	height: 33px;
 	margin: 0px 7px;
-	background: url(img/footer-copyright-sprite.png) no-repeat 0 50%;
+	background: url(../img/footer-copyright-sprite.png) no-repeat 0 50%;
 }
 footer .copyright div:last-of-type{
-	background: url(img/footer-copyright-sprite.png) no-repeat 100% 50%;
+	background: url(../img/footer-copyright-sprite.png) no-repeat 100% 50%;
 }

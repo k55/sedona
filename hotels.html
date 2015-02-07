@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Sedona - hotels</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="hotels-styles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/hotels-styles.css">
+	<link rel="stylesheet" type="text/css" href="css/symbols-sedona.css">
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -29,17 +30,17 @@
 			<div class="col">
 				<div class="filter-title">Инфраструктура:</div>
 				<ul>
-					<li class="filter-checked">Бассейн</li>
-					<li>Парковка</li>
-					<li>Wi-Fi</li>
+					<li><span class="icon-check-on"></span>Бассейн</li>
+					<li><span class="icon-check-off"></span>Парковка</li>
+					<li><span class="icon-check-off"></span>Wi-Fi</li>
 				</ul>
 			</div>
 			<div class="col">
 				<div class="filter-title">Тип жилья</div>
 				<ul>
-					<li class="filter-checked">Гостиница</li>
-					<li class="filter-checked">Мотель</li>
-					<li class="filter-checked">Апартаменты</li>
+					<li><span class="icon-check-on"></span>Гостиница</li>
+					<li><span class="icon-check-on"></span>Мотель</li>
+					<li><span class="icon-check-on"></span>Апартаменты</li>
 				</ul>
 			</div>
 			<div class="col">
@@ -75,8 +76,8 @@
 				<li>По типу</li>
 				<li>По рейтингу</li>
 			</ul>
-			<div class="sort-arrow up"></div>
-			<div class="sort-arrow down"></div>
+			<div class="sort-arrow icon-down-dir active"></div>
+			<div class="sort-arrow icon-up-dir"></div>
 		</aside>
 		<!--Results-->
 		<section class="results">
@@ -94,7 +95,12 @@
 					</div>
 				</div>
 				<div class="rate">
-					<div class="stars"></div>
+					<div class="stars">
+						<span class="icon-star"></span>
+						<span class="icon-star"></span>
+						<span class="icon-star"></span>
+						<span class="icon-star"></span>
+					</div>
 					<div class="rate-num">Рейтинг:8,5</div>
 				</div>
 			</article>
@@ -112,7 +118,10 @@
 					</div>
 				</div>
 				<div class="rate">
-					<div class="stars"></div>
+					<div class="stars">
+						<span class="icon-star"></span>
+						<span class="icon-star"></span>
+					</div>
 					<div class="rate-num">Рейтинг:8,9</div>
 				</div>
 			</article>
@@ -130,7 +139,11 @@
 					</div>
 				</div>
 				<div class="rate">
-					<div class="stars"></div>
+					<div class="stars">
+						<span class="icon-star"></span>
+						<span class="icon-star"></span>
+						<span class="icon-star"></span>
+					</div>
 					<div class="rate-num">Рейтинг:9,2</div>
 				</div>
 			</article>
@@ -142,9 +155,9 @@
 				<a href="hotels.html" class="title">#visitsedona</a>
 			</div>
 			<div class="social-btns">
-				<a href=""></a>
-				<a href=""></a>
-				<a href=""></a>
+				<a href="#" class="icon-twitter">0x74</a>
+				<a href="#" class="icon-facebook">0x66</a>
+				<a href="#" class="icon-youtube">0x39</a>
 			</div>
 			<div class="copyright">
 				<span>website by</span>
