@@ -37,6 +37,21 @@ header, main, footer{
 	display: inline-block;
 	width: 20%;
 }
+.top-menu-list a:hover{
+	color: #81b3d2;
+}
+.top-menu-list a.down{
+	color: #cacaca;
+}
+.top-menu-list .active{
+	color: #766357;
+}
+.top-menu-list .active:hover{
+	color: #604e43;
+}
+.top-menu-list .active.down{
+	color: #dbd8d5;
+}
 .top-menu-list li:nth-child(2){
 	margin-right: 20%;
 }
@@ -218,14 +233,31 @@ header, main, footer{
 	display: inline-block;
 	width: 74%;
 	margin-bottom: 29px;
-	padding: 6px 10px;
+	padding: 4px 10px;
 	text-transform: uppercase;
 	background: #f2f2f2;
-	border: none;
+	border: 2px solid #f2f2f2;
 	box-sizing:border-box;
+}
+.search-popup label+input:hover{
+	background: #ebebeb;
+	border: 2px solid #ebebeb;
+}
+.search-popup label+input:focus{
+	background: #fff;
+	border: 2px solid #e5e5e5;
 }
 .cover-for-calendar{
 	position: relative;
+}
+.cover-for-calendar .icon-calendar{
+	cursor: default;
+}
+.cover-for-calendar .icon-calendar:hover{
+	color: #000;
+}
+.cover-for-calendar .icon-calendar:active{
+	color: #81b3d2;
 }
 .search-popup label+input+i{
 	display: block;
@@ -254,6 +286,12 @@ header, main, footer{
 	color: #a9a9a9;
 	cursor: default;
 }
+.search-popup .count-toggler .less:hover, .search-popup .count-toggler .more:hover{
+	color: #000;
+}
+.search-popup .count-toggler .less:active, .search-popup .count-toggler .more:active{
+	color: #81b3d2;
+}
 .search-popup .count-toggler input{
  	width: 15px;
  	padding: 0 10px;
@@ -280,6 +318,14 @@ header, main, footer{
 	background: #81b3d2;
 	border: none;
 }
+.search-popup input[type="submit"]:hover{
+	background: #669ec0;
+}
+.search-popup input[type="submit"]:active{
+	background: #5496bd;
+	color: #94b9d2;
+}
+
 	/* Map */
 #map{
 	position: relative;
@@ -320,19 +366,41 @@ footer .social-btns a{
 	text-decoration: none;
 	background: #81b3d2;
 	border: 1px solid #8bb9d6;
-
+}
+footer .social-btns a:hover{
+	background: #669ec0;
+}
+footer .social-btns a:active{
+	color: #94b9d2;
+	background: #5496bd;
 }
 footer .copyright *{
 	line-height: 21px;
 	vertical-align: middle;
+	text-decoration: none;
+	color: #000;
 }
 footer .copyright div{
 	display: inline-block;
 	width: 27px;
 	height: 33px;
 	margin: 0px 7px;
-	background: url(../img/footer-copyright-sprite.png) no-repeat 0 50%;
 }
-footer .copyright div:last-of-type{
-	background: url(../img/footer-copyright-sprite.png) no-repeat 100% 50%;
+footer .copyright .copyright-logo1{
+	background: url(../img/footer-copyright-sprite.png) no-repeat 0 0;
+}
+footer .copyright  a:hover .copyright-logo1{
+	background: url(../img/footer-copyright-sprite.png) no-repeat 0 48.75%;
+}
+footer .copyright  a:active .copyright-logo1{
+	background: url(../img/footer-copyright-sprite.png) no-repeat 0 100%;
+}
+footer .copyright .copyright-logo2{
+	background: url(../img/footer-copyright-sprite.png) no-repeat 100% 0;
+}
+footer .copyright  a:hover>.copyright-logo2{
+	background: url(../img/footer-copyright-sprite.png) no-repeat 100% 48.75%;
+}
+footer .copyright  a:active>.copyright-logo2{
+	background: url(../img/footer-copyright-sprite.png) no-repeat 100% 100%;
 }
