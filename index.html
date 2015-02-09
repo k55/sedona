@@ -94,34 +94,35 @@
 			<h1>Заинтересовались?</h1>
 			<span class="title-prim">Укажите предполагаемые даты поездки<br> и мы покажем вам лучшие предложения гостиниц в Седоне</span>
 			<div class="search-button">
-				<button class="title">Поиск гостиницы в Седоне</button>
+				<label class="title" for="rel_popup_btn">Поиск гостиницы в Седоне</label>
+				<input id="rel_popup_btn" type="checkbox">
 		<!--Search form-->
-		<section class="search-popup">
-			<form action="">
-				<div class="cover-for-calendar">
-					<label for="din">Дата заезда:</label>
-					<input type="text" id="din" value="24 апреля 2015">
-					<i class="icon-calendar"></i>
-				</div>
-				<div class="cover-for-calendar">
-					<label for="dout">Дата выезда:</label>
-					<input type="text" id="dout" value="4 июля 2015"><i class="icon-calendar"></i>
-				</div>
-				<span>Взрослые:</span>
-				<div class="count-toggler count-adult">
-					<div class="less icon-minus"></div>
-					<input type="text" value="2">
-					<div class="more icon-plus"></div>
-				</div>
-				<span>Дети:</span>
-				<div class="count-toggler count-child">
-					<div class="less icon-minus"></div>
-					<input type="text" value="0">
-					<div class="more icon-plus"></div>
-				</div>
-				<input type="submit" value="Найти" class="title">
-			</form>
-		</section>
+				<section class="search-popup">
+					<form action="">
+						<div class="cover-for-calendar">
+							<label for="din">Дата заезда:</label>
+							<input type="text" id="din" value="24 апреля 2015">
+							<i class="icon-calendar"></i>
+						</div>
+						<div class="cover-for-calendar">
+							<label for="dout">Дата выезда:</label>
+							<input type="text" id="dout" value="4 июля 2015"><i class="icon-calendar"></i>
+						</div>
+						<span>Взрослые:</span>
+						<div class="count-toggler count-adult">
+							<div class="less icon-minus"></div>
+							<input type="text" value="2">
+							<div class="more icon-plus"></div>
+						</div>
+						<span>Дети:</span>
+						<div class="count-toggler count-child">
+							<div class="less icon-minus"></div>
+							<input type="text" value="0">
+							<div class="more icon-plus"></div>
+						</div>
+						<input type="submit" value="Найти" class="title">
+					</form>
+				</section>
 			</div>
 		</section>
 	</main>
