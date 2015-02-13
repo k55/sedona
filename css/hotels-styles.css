@@ -35,23 +35,36 @@ main .filter:after{
 	line-height: 26px;
 	cursor: default;
 }
-.col ul li>span{
+.col ul li label>span{
 	padding-right: 20px;
 	font-size:22px;
 	color: #b5b5b5;
 }
-.col ul li:hover>span{
+.col ul li:hover label>span{
 	color: #fff;
 }
-.col ul li>span.disabled{
+.col ul li>input[disabled] + label > span::before{
 	color: #6a6a6a;
-}
-.col ul li>span:onmousedown{
 }
 .col .filter-title{
 	font-size: 16px;
 	font-weight: bold;
 }
+		/*  Checkbox transformations  */
+span[class^="icon-check"]::before, .span[class^=" icon-check"]::before{
+	content: '\2610';
+	transform: rotate(-180deg);
+	transition: content 1s, transform 1s;
+}
+.col ul li>input:checked + label > span[class^="icon-check"]::before{
+	content: '\2611';
+	transform: rotate(0deg);
+}
+.col ul li>input{
+	display: none;
+}
+
+		/*  END OF Checkbox transformations  */
 	/* Col 3 Inputs */
 .price-inputs{
 	margin-top:15px;
