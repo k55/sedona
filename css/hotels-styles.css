@@ -50,7 +50,7 @@ main .filter:after{
 	font-size: 16px;
 	font-weight: bold;
 }
-		/*  Checkbox transformations  */
+	/*  Checkbox/radio transformations  */
 span[class^="icon-check"]::before, .span[class^=" icon-check"]::before{
 	content: '\2610';
 	transform: rotate(-180deg);
@@ -63,8 +63,6 @@ span[class^="icon-check"]::before, .span[class^=" icon-check"]::before{
 .col ul li>input{
 	display: none;
 }
-
-		/*  END OF Checkbox transformations  */
 	/* Col 3 Inputs */
 .price-inputs{
 	margin-top:15px;
@@ -110,7 +108,7 @@ span[class^="icon-check"]::before, .span[class^=" icon-check"]::before{
 }
 .range-controls .toggle{
 	position: absolute;
-	top: -5px;
+	top: -7px;
 	width: 4px;
 	height: 4px;
 	background: #ababab;
@@ -128,7 +126,7 @@ span[class^="icon-check"]::before, .span[class^=" icon-check"]::before{
 	left: 50%
 }
 
-	/* Col 3 "Show" button */
+	/* Col 3 submit ("Show") button */
 .filter .col input[type="submit"]{
 	display: block;
 	width: 133px;
