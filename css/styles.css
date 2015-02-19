@@ -207,16 +207,16 @@ header, main, footer{
 	cursor: pointer;
 }
 	/* Search form */
-.relative-oordinat{
+.relative-ordinat{
 	position: relative;
 	width: 568px;
 	margin: 0px auto;
 	z-index: 2;
 }
-.relative-oordinat > input{
+.relative-ordinat > input{
 	display: none;
 }
-.relative-oordinat > input:checked + .search-popup{
+.relative-ordinat > input:checked + .search-popup{
 	transform: translateY(100%);
 	opacity: 1;
 }
