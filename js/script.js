@@ -1,18 +1,61 @@
-/* Search forn number of people toggler */
+/* Search form: number of people toggler */
 
-      /* Col 3 cost input/roller */
+//var container = document.getElementsByClassName("search-popup")[0];
+window.onload = function(){
+  var isIndex = document.getElementsByTagName("title")[0].innerHTML;
+  if (isIndex.search(/\sInformation$/) === -1) return; 
 
-var togMin = document.getElementsByClassName("toggle-min")[0];
-var togMax = document.getElementsByClassName("toggle-max")[0];
-var scale = document.getElementsByClassName("scale")[0];
-var scaleBar = document.getElementsByClassName("scale-bar")[0];
-var costFrom = document.getElementsByClassName("cost-from")[0];
-var costTo = document.getElementsByClassName("cost-to")[0];
+  var less = document.getElementsByClassName("less");
+  var more = document.getElementsByClassName("more");
+  var adult = document.getElementsByClassName("count-adult")[0];
+  var child = document.getElementsByClassName("count-child")[0];
+  var adultInput = adult.getElementsByTagName("input")[0];
+  var childInput = child.getElementsByTagName("input")[0];
+
+  less[0].addEventListener("click", AmountChange, false);
+  less[1].addEventListener("click", AmountChange, false);
+  more[0].addEventListener("click", AmountChange, false);
+  more[1].addEventListener("click", AmountChange, false);
+
+function AmountChange(event){
+  var tempx = 0;
+  if (adult.contains(this))
+    if (this.className.search(/(^|\s)less(\s|$)/) !== -1){
+          tempx = adultInput.value;
+          tempx > 0 ? adultInput.value = tempx - 1 : adultInput.value = tempx;
+        }
+    else {
+          tempx = parseFloat(adultInput.value) + 1;
+          adultInput.value = tempx;
+        }
+  else
+    if (this.className.search(/(^|\s)less(\s|$)/) !== -1){
+          tempx = childInput.value;
+          tempx > 0 ? childInput.value = tempx - 1 : childInput.value = tempx;
+        }
+    else {
+          tempx = parseFloat(childInput.value) + 1;
+          childInput.value = tempx;
+        }
+};
+}();
+
+      /* Filter: Col 3 cost input/roller */
+
 
 window.onload = function() {
-	togMin.addEventListener("mousedown", dragToggle, false);
-	togMax.addEventListener("mousedown", dragToggle, false);
-}();
+  var isHotels = document.getElementsByTagName("title")[0].innerHTML;
+  if (isHotels.search(/\shotels$/) === -1) return; 
+
+  var togMin = document.getElementsByClassName("toggle-min")[0];
+  var togMax = document.getElementsByClassName("toggle-max")[0];
+  var scale = document.getElementsByClassName("scale")[0];
+  var scaleBar = document.getElementsByClassName("scale-bar")[0];
+  var costFrom = document.getElementsByClassName("cost-from")[0];
+  var costTo = document.getElementsByClassName("cost-to")[0];
+  togMin.addEventListener("mousedown", dragToggle, false);
+  togMax.addEventListener("mousedown", dragToggle, false);
+
 
 // Определяет длинну полос прокрутки
   function getScrollOffsets(w){
@@ -31,94 +74,95 @@ window.onload = function() {
   };
 
         //===========//
-function dragToggle(event){
-  var offsetX = getScrollOffsets();
-
-  var touchedTog = this;// Змінній присвоєно об'єкт обробника
-
-  // Визначає положення по осі Х батьківського елемента відносно документа:
-            //scaleW: scaleBox.width || scaleBox.right - scaleBox.left
-    var scaleBox = scale.getBoundingClientRect();
-    var scaleLeft = scaleBox.left + offsetX.x;
-
-  // Визначає положення бігунка по осі Х відносно документа
-  function ToggleParam() {
-    var togSideMin = togMin.getBoundingClientRect();
-    var togSideMax = togMax.getBoundingClientRect();
-    return { tMinX: togSideMin.left + offsetX.x,
-              tMaxX: togSideMax.left + offsetX.x,
-              scaleWidth: scaleBox.width,
-              togWidth: togSideMin.width}
-  }
-  // Визначеємо координати миші в точці mousedown по осі Х відносно документа
-  var mouseTouch = event.clientX + offsetX.x;
-
-  // Знаходимо різницю між точкою mousedown і лівою стороною натиснутого
-  // бігунка
-  var param = ToggleParam();
-  var delta = mouseTouch - function(){
-                            if (touchedTog == togMin)
-                              return param.tMinX;
-                            else return param.tMaxX;
-                            }();
-
-// Визначаємо межі переміщення бігунків
-var leftLimit = 0;
-var rightLimit = param.tMaxX - param.togWidth - scaleLeft;
-(function (){
-  if (touchedTog == togMax){
-    leftLimit = param.tMinX + param.togWidth - scaleLeft;
-    rightLimit = param.scaleWidth - param.togWidth;
-  }
-})();
-
-  // Визначаємо ділення шкали
-  var scaleDivide = (param.scaleWidth - param.togWidth) / 100;
-
-  // Визначаємо початкові значення стилів підсвітки шкали
-    var barMarginLeft = parseInt(window.getComputedStyle(scaleBar, "").marginLeft);
-    var barWidth = window.getComputedStyle(scaleBar, "").width;
-
-  // Реєструємо обробники перетягування і відпускання бігунка:
-  document.addEventListener("mousemove", Moving, true);
-  document.addEventListener("mouseup", stopMoving, true);
-  // Не передавати подію іншим обробникам
-  event.stopPropagation();
-  event.preventDefault();
-
-  // Обробник переміщення
-  function Moving(event){
+  function dragToggle(event){
     var offsetX = getScrollOffsets();
-    // Перевірка
-    var current = event.clientX + offsetX.x - delta - scaleLeft;
-    var allowedStyle = function(){
-      if (current >= rightLimit)
-        return rightLimit;
-      else if (current <= leftLimit)
-        return leftLimit;
-        else return current;
-    }();
-    // Змістити бігунок в позицію вказівника миші
-    touchedTog.style.left = allowedStyle + "px";
-    // Підганяємо розмір шкали під проміжок між бігунками
-    if (touchedTog == togMin){
-      scaleBar.style.marginLeft = allowedStyle + "px";
-      scaleBar.style.width = param.tMaxX - scaleLeft - allowedStyle + "px";
-      // Задаємо значення полів input залежно від положення бігунка
-      costFrom.value = Math.round(allowedStyle / scaleDivide) * 100;
+
+    var touchedTog = this;// Змінній присвоєно об'єкт обробника
+
+    // Визначає положення по осі Х батьківського елемента відносно документа:
+              //scaleW: scaleBox.width || scaleBox.right - scaleBox.left
+      var scaleBox = scale.getBoundingClientRect();
+      var scaleLeft = scaleBox.left + offsetX.x;
+
+    // Визначає положення бігунка по осі Х відносно документа
+    function ToggleParam() {
+      var togSideMin = togMin.getBoundingClientRect();
+      var togSideMax = togMax.getBoundingClientRect();
+      return { tMinX: togSideMin.left + offsetX.x,
+                tMaxX: togSideMax.left + offsetX.x,
+                scaleWidth: scaleBox.width,
+                togWidth: togSideMin.width}
     }
-    else {
-      scaleBar.style.width = allowedStyle - barMarginLeft + "px";
-      costTo.value = Math.round(allowedStyle / scaleDivide) * 100;
+    // Визначеємо координати миші в точці mousedown по осі Х відносно документа
+    var mouseTouch = event.clientX + offsetX.x;
+
+    // Знаходимо різницю між точкою mousedown і лівою стороною натиснутого
+    // бігунка
+    var param = ToggleParam();
+    var delta = mouseTouch - function(){
+                              if (touchedTog == togMin)
+                                return param.tMinX;
+                              else return param.tMaxX;
+                              }();
+
+  // Визначаємо межі переміщення бігунків
+  var leftLimit = 0;
+  var rightLimit = param.tMaxX - param.togWidth - scaleLeft;
+  (function (){
+    if (touchedTog == togMax){
+      leftLimit = param.tMinX + param.togWidth - scaleLeft;
+      rightLimit = param.scaleWidth - param.togWidth;
+    }
+  })();
+
+    // Визначаємо ділення шкали
+    var scaleDivide = (param.scaleWidth - param.togWidth) / 100;
+
+    // Визначаємо початкові значення стилів підсвітки шкали
+      var barMarginLeft = parseInt(window.getComputedStyle(scaleBar, "").marginLeft);
+      var barWidth = window.getComputedStyle(scaleBar, "").width;
+
+    // Реєструємо обробники перетягування і відпускання бігунка:
+    document.addEventListener("mousemove", Moving, true);
+    document.addEventListener("mouseup", stopMoving, true);
+    // Не передавати подію іншим обробникам
+    event.stopPropagation();
+    event.preventDefault();
+
+    // Обробник переміщення
+    function Moving(event){
+      var offsetX = getScrollOffsets();
+      // Перевірка
+      var current = event.clientX + offsetX.x - delta - scaleLeft;
+      var allowedStyle = function(){
+        if (current >= rightLimit)
+          return rightLimit;
+        else if (current <= leftLimit)
+          return leftLimit;
+          else return current;
+      }();
+      // Змістити бігунок в позицію вказівника миші
+      touchedTog.style.left = allowedStyle + "px";
+      // Підганяємо розмір шкали під проміжок між бігунками
+      if (touchedTog == togMin){
+        scaleBar.style.marginLeft = allowedStyle + "px";
+        scaleBar.style.width = param.tMaxX - scaleLeft - allowedStyle + "px";
+        // Задаємо значення полів input залежно від положення бігунка
+        costFrom.value = Math.round(allowedStyle / scaleDivide) * 100;
+      }
+      else {
+        scaleBar.style.width = allowedStyle - barMarginLeft + "px";
+        costTo.value = Math.round(allowedStyle / scaleDivide) * 100;
+      };
+
+      event.stopPropagation();
     };
 
-    event.stopPropagation();
+    // Обробник відпускання бігунка
+    function stopMoving(event){
+      document.removeEventListener("mouseup", stopMoving, true);
+      document.removeEventListener("mousemove", Moving, true);
+      event.stopPropagation();
+    };
   };
-
-  // Обробник відпускання бігунка
-  function stopMoving(event){
-    document.removeEventListener("mouseup", stopMoving, true);
-    document.removeEventListener("mousemove", Moving, true);
-    event.stopPropagation();
-  };
-};
+}();
